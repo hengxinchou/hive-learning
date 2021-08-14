@@ -74,5 +74,5 @@ order by `t.avgrate` desc
 
 ### 思路
 
-1. 使用with as 定义一个表 `top_10_movie`m 评论对多的女士的评分最高10个电影
+1. 使用with as 定义一个表 `top_10_movie`评论对多的女士的评分最高10个电影
 2. 通过 top_10_movie、t_rating、t_moive join表查出这10个电影的平均评分，按从高到低排名

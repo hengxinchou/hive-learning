@@ -21,6 +21,8 @@ group by u.age
 
 ## 我的解答
 
+### sql代码
+
 ```sql
 select u.sex AS sex, m.moviename AS name, avg(r.rate) as avgrate, count(r.userid) as total
 from t_rating r
@@ -32,7 +34,8 @@ having count(r.userid) > 50
 order by avgrate desc
 limit 10
 ```
-截图
+### 截图
+
 ![img_2 .png](截图/img_2.png)
 
 # 3 题目三
@@ -40,6 +43,7 @@ limit 10
 ## 问题
 > 困难：找出影评次数最多的女士所给出最高分的10部电影的平均影评分，展示电影名和平均影评分（可使用多行SQL
 
+### sql代码
 
 ```sql
 	with top_10_movie as (
@@ -63,7 +67,12 @@ order by `t.avgrate` desc
 ```
 
 
-截图
+### 截图
 
 8月14日晚上、15日凌晨跑，调试到一半，发现机器被回收了。
 故没有了。麻烦老师看一下SQL是否对哈
+
+### 思路
+
+1. 使用with as 定义一个表 `top_10_movie`m 评论对多的女士的评分最高10个电影
+2. 通过 top_10_movie、t_rating、t_moive join表查出这10个电影的平均评分，按从高到低排名

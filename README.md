@@ -46,7 +46,7 @@ limit 10
 ### sql代码
 
 ```sql
-	with top_10_movie as (
+with top_10_movie as (
     select t1.movieid as movieid, t1.rate as rate from t_rating t1
         inner join (select t_rating.userid, count(*) cnt from t_rating
                     inner join t_user
